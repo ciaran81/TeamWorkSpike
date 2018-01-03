@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by cdoherty on 29/12/2017.
+ * Model object received from the API
  */
 
 public class Projects {

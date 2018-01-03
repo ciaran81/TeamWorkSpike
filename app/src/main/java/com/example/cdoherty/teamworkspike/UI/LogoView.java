@@ -14,6 +14,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by cdoherty on 31/12/2017.
+ * Object to set the logo url received in the API
  */
 
 public class LogoView extends LinearLayout {
@@ -44,6 +45,10 @@ public class LogoView extends LinearLayout {
         this.url = url;
     }
 
+    /**
+     * If there is a valid url within the json object set the imageview using the Picasso library
+     * Otherwise set the imageview with the default drawable
+     */
     public void setImageView() {
         if (url != null && url.length() > 0) {
             Picasso.with(ctx).load(url).into(imageView);
@@ -53,6 +58,9 @@ public class LogoView extends LinearLayout {
         }
     }
 
+    /**
+     * Setup the logo view
+     */
     private void setViews() {
         LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.project_logo, this);

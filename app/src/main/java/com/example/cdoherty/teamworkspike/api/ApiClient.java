@@ -23,7 +23,10 @@ public class ApiClient {
     public static final String API_URL = "https://yat.teamwork.com/";
     public static final String AUTH_TOKEN = "eWF0QHRyaXBsZXNwaW4uY29tOnlhdHlhdHlhdDI3";
 
-
+    /**
+     * GET call to the TeamWork API
+     * @return
+     */
     public static TeamWork getAuthApi() {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new Interceptor() {

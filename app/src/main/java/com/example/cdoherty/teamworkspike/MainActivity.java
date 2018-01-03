@@ -23,7 +23,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements ProjectsAdapter.OnItemSelectedListener {
-    public static final String TAG = MainActivity.class.getSimpleName();
     public static final String PROJECT = "Project";
     public static final String PROJECT_BUNDLE = "project-bundle";
     public static final String LOGO_URL = "logo-url";
@@ -48,6 +47,11 @@ public class MainActivity extends AppCompatActivity
         getProjects();
     }
 
+    /**
+     * Method to make a call to the API via the ApiClient.class
+     * Adds Projects received from the response object to populate the List of projects
+     * Notifies the adapter with project list
+     */
     private void getProjects() {
         ApiClient.getAuthApi().projects().enqueue(new Callback<Projects>() {
             @Override
@@ -65,9 +69,12 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * Interface method that when clicked will start the ProjectActivity
+     * @param project object used in the ProjectActivity
+     */
     @Override
     public void onItemClicked(Project project) {
-        //todo start new activity that shows the relevant project clicked
         Intent intent = new Intent(this, ProjectActivity.class);
         Bundle bundle = new Bundle();
         bundle.putParcelable(PROJECT, project);

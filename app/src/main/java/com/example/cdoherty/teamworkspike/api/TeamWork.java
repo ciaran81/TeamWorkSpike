@@ -11,6 +11,7 @@ import retrofit2.http.Path;
 
 /**
  * Created by cdoherty on 24/12/2017.
+ * Interface class to specify what is requested from the API
  */
 
 public interface TeamWork {

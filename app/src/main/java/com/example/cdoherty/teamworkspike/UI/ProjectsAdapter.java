@@ -42,10 +42,14 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.project_content, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
-        Log.d(TAG, "onCreateViewHolder: ");
         return viewHolder;
     }
 
+    /**
+     * Fill the custom view holder views with each project and its' attributes
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Project project = projects.get(position);
@@ -63,6 +67,11 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         return projects.size();
     }
 
+    /**
+     * Custom viewholder with associated view types
+     * Bind method includes an implemented interface that sends a callback notifying the activity
+     * that the viewholder has been clicked
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         private View view;
         private TextView projectName;

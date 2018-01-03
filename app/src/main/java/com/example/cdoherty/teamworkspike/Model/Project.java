@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by cdoherty on 27/12/2017.
+ * Project object with the associated attributes and their getters & setters
  */
 
 public class Project implements Parcelable {
@@ -31,16 +32,8 @@ public class Project implements Parcelable {
         return logo;
     }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
     public String getStatus() {
         return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public boolean isStarred() {
@@ -51,32 +44,16 @@ public class Project implements Parcelable {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
     public String getEndDate() {
         return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
     }
 
     public String getSubStatus() {
         return subStatus;
     }
 
-    public void setSubStatus(String subStatus) {
-        this.subStatus = subStatus;
-    }
-
     public String getCreatedOn() {
         return createdOn;
-    }
-
-    public void setCreatedOn(String createdOn) {
-        this.createdOn = createdOn;
     }
 
     public Integer getId() {
@@ -99,18 +76,12 @@ public class Project implements Parcelable {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @SerializedName("name")
 
     private String name;
     @SerializedName("description")
     private String description;
 
-    public Project() {
-    }
 
     public Project(Parcel in) {
         starred = Boolean.parseBoolean(in.readString());

@@ -47,7 +47,7 @@ public class ProjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_project);
         project = getIntent().getBundleExtra(PROJECT_BUNDLE).getParcelable(PROJECT);
         recyclerView = findViewById(R.id.project_recycler_view);
-        adapter = new ProjectAdapter(populateAttributes(project), this);
+        adapter = new ProjectAdapter(populateAttributes(project));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         setTitle(project.getName());
@@ -58,16 +58,27 @@ public class ProjectActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Setup associated views
+     */
     private void setViews() {
         descriptionTextView.setMovementMethod(new ScrollingMovementMethod());
         descriptionTextView.setText(project.getDescription());
     }
 
+    /**
+     * @param url passed in to set the view
+     */
     private void setLogo(String url) {
         logo.setUrl(url);
         logo.setImageView();
     }
 
+    /**
+     * Method that builds the projectAttributesList
+     * @param project that has associated attributes - used to create multiple ProjectAttributes objects
+     * @return list of ProjectAttributes
+     */
     private List<ProjectAttributes> populateAttributes(Project project) {
         projectAttributesList = new ArrayList<>();
         projectAttributesList.add(new ProjectAttributes(R.string.created_on, convertCreationDate(project.getCreatedOn())));
@@ -78,6 +89,11 @@ public class ProjectActivity extends AppCompatActivity {
         return projectAttributesList;
     }
 
+    /**
+     * Method to convert the string date passed from the api
+     * @param createdDate
+     * @return string with reformatted date
+     */
     private String convertCreationDate(String createdDate) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         Date date = null;
@@ -91,6 +107,11 @@ public class ProjectActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method to convert the string date passed from the api
+     * @param date
+     * @return string with reformatted date
+     */
     private String convertDate(String date){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Date mDate = null;

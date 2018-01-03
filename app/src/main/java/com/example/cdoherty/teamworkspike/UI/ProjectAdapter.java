@@ -15,13 +15,14 @@ import java.util.List;
 
 /**
  * Created by cdoherty on 02/01/2018.
+ * Adapter class for an individual project
  */
 
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>{
 
     private List<ProjectAttributes> projectAttributes;
 
-    public ProjectAdapter(List<ProjectAttributes> projectAttributes, Context context) {
+    public ProjectAdapter(List<ProjectAttributes> projectAttributes) {
         this.projectAttributes = projectAttributes;
     }
 
@@ -46,6 +47,9 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
     }
 
 
+    /**
+     * Custom view holder with associated textviews for the project attributes
+     */
     public class ProjectViewHolder extends RecyclerView.ViewHolder{
         public TextView attributeName;
         public TextView attributeLabel;
