@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TeamWorkSpike</string>
+    <string name="projects">Projects</string>
+    <string name="project_name">Project Name:</string>
+    <string name="created_on">Created On:</string>
+    <string name="start_date">Start Date:</string>
+    <string name="end_date">End Date:</string>
+    <string name="status">Status:</string>
+    <string name="sub_status">Sub Status:</string>
+</resources>
