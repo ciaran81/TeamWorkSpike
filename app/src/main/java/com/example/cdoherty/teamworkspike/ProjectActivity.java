@@ -102,7 +102,6 @@ public class ProjectActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Log.d(TAG, "convertDate: " + date);
         return date.toString();
 
     }
@@ -120,7 +119,6 @@ public class ProjectActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Log.d(TAG, "convertDate: " + mDate);
         return mDate.toString();
     }
 
